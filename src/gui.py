@@ -1,4 +1,10 @@
 import tkinter as tk
+
+import matplotlib
+matplotlib.use('TkAgg')
+matplotlib.rcParams['backend'] = 'TkAgg'
+matplotlib.rcParams['interactive'] = False
+
 import numpy as np
 import torch
 import time
@@ -10,14 +16,10 @@ from src.data import preprocess_for_model
 from src.utils import get_device, setup_matplotlib_fonts, setup_ttk_style, get_chinese_font
 import config
 
-# 初始化中文配置
-setup_matplotlib_fonts()
-setup_ttk_style()
-
 class HandwritingDigitGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("手写数字识别")
+        self.root.title("number_recognize")
         self.root.geometry("1000x500")
         
         # 画笔设置
@@ -44,7 +46,7 @@ class HandwritingDigitGUI:
         
         # 清空按钮
         self.clear_btn = tk.Button(
-            root, text="清空画布", command=self.clear_canvas,
+            root, text="Clear Canvas", command=self.clear_canvas,
             height=2, width=10, font=get_chinese_font()
         )
         self.clear_btn.grid(row=1, column=0, pady=(0, 20))
@@ -56,9 +58,9 @@ class HandwritingDigitGUI:
         
         self.digits = np.arange(10)
         self.prob_bars = self.ax.bar(self.digits, np.zeros(10), color="skyblue")
-        self.ax.set_xlabel("数字")
-        self.ax.set_ylabel("概率")
-        self.ax.set_title("数字概率分布")
+        self.ax.set_xlabel("number")
+        self.ax.set_ylabel("probability")
+        self.ax.set_title("number probability distribution")
         self.ax.set_xticks(self.digits)
         self.ax.set_ylim(0, 1)
         self.prob_texts = [self.ax.text(i, 0.01, "0.000", ha="center", fontsize=8) for i in range(10)]
