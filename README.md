@@ -13,14 +13,20 @@ pip install -r requirements.txt
 
 ## 使用方法
 
-### 1.训练模型：
+### 一.本地训练模型
+#### 1.训练模型：
 ```bash
 python train_main.py
 ```
 
-### 2.启动识别界面：
+#### 2.启动识别界面：
 ```bash
 python predict_main.py
 ```
+### 二.通过release下载模型
+#### 1.在release里面下载模型文件，并解压到models文件夹
+
+#### 2.启动识别界面
+同第一种
 
 在左侧画布手写数字，右侧将显示预测概率分布。
