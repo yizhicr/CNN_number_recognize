@@ -1,0 +1,68 @@
+# ------------ 项目特定文件 ------------
+# 模型文件（通过Release发布，不纳入代码库）
+*.pth
+mnist_cnn_best.pth
+mnist_cnn_final.pth
+
+# 数据集目录（代码会自动下载，无需提交）
+/data/
+data/
+
+# 训练生成的可视化文件（图片等）
+*.png
+training_curves.png
+predictions_visualization.png
+confusion_matrix.png
+
+# ------------ Python相关 ------------
+# 字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境目录
+venv/
+env/
+ENV/
+.venv/
+
+# 安装包相关
+*.egg-info/
+dist/
+build/
+*.egg
+
+# 日志文件
+*.log
+
+# ------------ 系统/IDE相关 ------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.directory
+
+# IDE配置（VS Code、PyCharm等）
+.idea/
+.vscode/
+*.swp
+*.swo
+*.iml
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# ------------ 临时文件 ------------
+*.tmp
+*.bak
+*~
